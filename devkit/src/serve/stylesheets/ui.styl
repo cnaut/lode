@@ -1,0 +1,440 @@
+tr, td {
+	border-spacing: 0px !important; font-size: 1px;
+}
+
+/* Scrollbar */
+div::-webkit-scrollbar {
+	width: 12px;
+}
+div::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+div::-webkit-scrollbar-thumb {
+	margin: 1px;
+	border-radius: 10px;
+	background: rgba(100,100,120,0.8);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+div::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(30,30,40,0.4);
+}
+div::-webkit-scrollbar-corner {
+	background: rgba(30,30,40,0.4);
+}
+
+
+#logo {
+	position: absolute;
+	left: 65px;
+	bottom: 70px;
+	width: 68px;
+	height: 54px;
+	background: url('/images/logo.png');
+	opacity: 0.5;
+}
+
+.fullHeight {
+	height: 100%;
+}
+
+bglight()
+	url('/images/backgrounds/bglight.png')
+
+bgdark()
+	url('/images/backgrounds/bgdark.png')
+
+absoluteBox(top = 0px, right = 0px, bottom = 0px, left = 0px)
+	position absolute
+	top top
+	bottom bottom
+	left left
+	right right
+
+/* rules for styling a TabbedPane with tabs on top */
+topTabsHeight = 41px
+
+.topTabs {
+	width: 100%;
+	height: 100%;
+	background #365187 bgdark()
+}
+.topTabs .tabContainerWrapper {
+	position absolute
+	width 100%
+	height topTabsHeight
+	padding 10px 0px 0px 15px
+	z-index 3;
+}
+
+.topTabs .tabContentsWrapper
+	position absolute
+	top topTabsHeight
+	bottom 0px
+	left 0px
+	right 0px
+
+.topTabs .tabContentsWrapper .mainPanel
+	border-top-left-radius 3px
+	box-shadow 0px 0px 3px black
+
+.topTabs .tabContainer .tab {
+	position: relative;
+	top: 3px;
+	height: 27px;
+
+	display: inline-block;
+	margin-right: 1px;
+	padding: 5px 14px 1px;
+	border-radius: 4px 4px 0px 0px;
+	cursor: default;
+	font: bold 14px Arial;
+	color: #585858;
+	text-shadow: 1px 1px 0px #AAA;
+	border-bottom: 1px solid #666;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0px -1px 0px rgba(255, 255, 255, 0.3), 0px -2px 3px rgba(0, 0, 0, 0.2);
+	background: linear-gradient(top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1)), #B5BABD bglight()
+}
+.topTabs .tabContainer .tab.selected {
+	top: 1px;
+	height: 31px;
+	border-bottom: none;
+	padding-top: 6px;
+	background: linear-gradient(bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.4)), bglight()
+	color: #333334;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.3);
+}
+
+.overviewPanel {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.overviewPanel .overviewTabs {
+	position: absolute;
+	z-index: 3;
+	height: 100%;
+	background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+
+.overviewPanel #projectSelector
+	padding-top 20px
+	cursor pointer
+
+.overviewPanel #projectSelector:hover .projectName
+	text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.5);
+
+.overviewPanel .overviewTabs .tabContainer {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 200px;
+	padding-top: 20px;
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: rgba(white, 0.1) inset -1px 0px 3px, rgba(black, 1) 0px 0px 3px;
+}
+.overviewPanel .overviewTabs .separator {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	margin: 5px 12px;
+}
+.overviewPanel .overviewTabs .tab {
+	cursor: default;
+	display: block;
+	padding: 5px 7px 7px 12px;
+	color: #777;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 17px;
+	border-bottom: 1px solid transparent;
+	text-shadow: 0px -1px 0px #000, 0px 1px 1px rgba(255,255,255,0.2);
+}
+.overviewPanel .overviewTabs .tab.selected {
+	box-shadow: inset 0px 0px 2px #000;
+	background: rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid #444;
+	color: #CCCCCD;
+	text-shadow: 1px 0px 1px #000000;
+}
+.overviewPanel .overviewPanes {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 200px;
+	right: 0px;
+	overflow-y: auto;
+	z-index: 1;
+}
+.overviewPanel .tabContainer {
+	background: #38393C bgdark();
+	margin 0
+	padding 0
+}
+
+.tabContents {
+	height: 100%;
+}
+.tabPane {
+	overflow: auto;
+	position: relative;
+	height: 100%;
+	overflow-y: auto;
+}
+
+/*** Panel containing the content of the plugin ***/
+.mainPanel {
+	absoluteBox()
+	background bglight()
+	border-top 1px solid rgba(255, 255, 255, 0.3)
+}
+
+/* Bar to make pages without tabs appear the same a pages with tabs */
+.topBar {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 41px;
+	background: linear-gradient(top, rgba(80, 80, 80, 0.5), rgba(45, 45, 45, 0.1)), url('/images/backgrounds/stripepattern.png');
+}
+
+.insetBorder,
+.defaultListStyle {
+	border-radius: 3px;
+	border: 1px solid #B0B0C0;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.3);
+	cursor: default;
+}
+.defaultListStyle {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 190px;
+	height: 100%;
+	padding-top: 5px;
+}
+.defaultCellStyle {
+	cursor: default;
+	padding: 4px 10px 2px;
+	font: 16px;
+	color: #E0E0E0;
+	font-weight: none;
+}
+.defaultCellStyle.selected {
+	background: #606060;
+	color: #FFF;
+}
+.defaultCellStyle input {
+	margin-left: 5px;
+}
+
+.monospace {
+	font-family: 'Menlo', Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal, monospace;
+}
+
+div#ip {
+	position: absolute;
+	bottom: 15px;
+	left: 10px;
+	right: 12px;
+	font: bold 10px Monaco;
+	z-index: 5;
+	overflow: hidden;
+	text-align: center;
+	padding: 7px 7px 2px 7px;
+
+	color: #232;
+	box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 5px 7px 2px 7px;
+	border-radius: 4px;
+	background: linear-gradient(bottom, #AAA, #C2C2C0);
+}
+
+.pluginPanel {
+	height: 100%;
+	position: relative;
+	overflow-y: auto;
+}
+
+/*** Color settings ***/
+.darkPanel {
+	border-radius 3px
+	background url('/images/backgrounds/darkpaper.png')
+	box-shadow 0px 1px 2px rgba(255, 255, 255, 0.5)
+}
+
+/* Context menu */
+.contextMenuOverlay {
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+}
+.contextMenu {
+	position: absolute;
+	border: 1px solid #000000;
+	border-color: #FFFFFF #888888 #888888 #FFFFFF;
+	border-radius: 3px;
+	background: #F0F0F0;
+	z-index: 100000;
+	padding: 4px 0 6px 0;
+	box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.4);
+	cursor: default;
+}
+.contextMenu .optionSeparator1,
+.contextMenu .optionSeparator2 {
+	float: left;
+	width: 100%;
+	clear: right;
+}
+.contextMenu .optionSeparator1 {
+	border: 1px solid #D0D0D0;
+	border-width: 1px 0 0 0;
+	margin-top: 8px;
+}
+.contextMenu .optionSeparator2 {
+	border: 1px solid #F8F8F8;
+	border-width: 0 0 1px 0;
+	margin-bottom: 8px;
+}
+.contextMenu .option,
+.contextMenu .checkedOption,
+.contextMenu .uncheckedOption,
+.contextMenu .selectedOption,
+.contextMenu .audioOption,
+.contextMenu .animationOption,
+.contextMenu .fontOption,
+.contextMenu .fontAddOption {
+	float: left;
+	width: 100%;
+	height: 22px;
+	font-size: 14px;
+	color: #000000;
+	padding: 2px 22px 5px;
+	clear: right;
+	border-radius: 2px;
+	background-position: 4px 3px;
+	background-repeat: no-repeat;
+}
+.contextMenu .checkedOption {
+	background-image: url('/images/icons/accept.png');
+}
+.contextMenu .uncheckedOption {
+	background-image: url('/images/icons/cross.png');
+}
+.contextMenu .selectedOption {
+	background-image: url('/images/icons/bullet_blue.png');
+}
+.contextMenu .audioOption {
+	background-image: url('/images/icons/control_play_blue.png');
+}
+.contextMenu .animationOption {
+	background-image: url('/images/icons/film_edit.png');
+}
+.contextMenu .fontOption {
+	background-image: url('/images/icons/font.png');
+}
+.contextMenu .fontAddOption {
+	background-image: url('/images/icons/font_add.png');
+}
+
+.contextMenu .option:hover,
+.contextMenu .audioOption:hover,
+.contextMenu .animationOption:hover,
+.contextMenu .fontOption:hover,
+.contextMenu .fontAddOption:hover {
+	color: #FFFFFF;
+	background-color: #365187;
+}
+
+.table-row {
+	display: table-row;
+}
+.table-cell {
+	display: table-cell;
+}
+
+center()
+	margin-left auto
+	margin-right auto
+
+/* Game Sidebar */
+radius-factor = 5.7 // Apple computes border radius by dividing by 5.7
+large-icon-size = 160
+large-icon-radius = round(large-icon-size / radius-factor)
+
+.projectIcon {
+	center()
+	width (large-icon-size)px
+	height (large-icon-size)px
+	margin-bottom 10px
+	display: block;
+	border-radius: unit(large-icon-radius, px);
+	position: relative;
+	background-size: contain;
+}
+.projectIcon.gloss::after {
+	content: "";
+	position: absolute;
+	z-index: 10;
+	display: block;
+	width: 100%;
+	height: 55%;
+
+	background: linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+	border-top-right-radius: 38px;
+	border-top-left-radius: 38px;
+	border-bottom-right-radius: 110px 20px;
+	border-bottom-left-radius: 110px 20px;
+	z-index: 5;
+	box-shadow: inset 0px 2px 1px rgba(255, 255, 255, 0.7);
+}
+
+.hoverable:hover:not(.selected) .projectIcon:before
+	content ''
+
+	position: absolute;
+	z-index: 10;
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	background: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+	border-radius unit(large-icon-radius, px)
+	z-index: 5;
+
+.projectName {
+	padding: 0 10px;
+	color: #eee;
+	width: 200px;
+	text-align: center;
+	margin: 0 0 15px;
+	font-size: 18px;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+	font-family: 'Gill Sans';
+	font-weight: 150;
+}
+
+#simulateButton {
+	display: block;
+	padding: 5px 0;
+	border: 1px solid #555;
+	width: 150px;
+	text-align: center;
+	margin: 10px 0 10px 25px;
+	border-radius: 5px;
+	background: linear-gradient(top, rgba(200, 200, 200, 1), rgba(150, 150, 150, 1));
+	box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2), 0px -1px 1px rgba(0, 0, 0, 0.2);
+	color: #222;
+	text-shadow: 0px 1px 0px #CCC;
+	cursor: pointer;
+}
+#simulateButton:active {
+	background: linear-gradient(top, rgba(150, 150, 150, 1), rgba(170, 170, 170, 1));
+}
