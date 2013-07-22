@@ -1,0 +1,14 @@
+CACHE MANIFEST
+
+#3ad52a6dc86c4b93823a3ceebda9453f version undefined
+
+CACHE:
+spritesheets/resources-images-avatarKiwiAce0.png
+spritesheets/spritesheetSizeMap.json
+index.html
+native-ios.js
+
+FALLBACK:
+
+NETWORK:
+*

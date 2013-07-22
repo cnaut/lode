@@ -42,5 +42,6 @@
 		"name": "Example Studio Name",
 		"domain": "studio.example.com",
 		"stagingDomain": "staging.example.com"
-	}
+	},
+	"sdkVersion": "release-0.1.29"
 }
